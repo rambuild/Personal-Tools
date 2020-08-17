@@ -5,15 +5,20 @@
   "author": "yh",
   "private": true,
   "scripts": {
-    "dev": "webpack-dev-server --inline --open --host 192.168.0.102 --progress --config build/webpack.dev.conf.js",
+    "dev": "webpack-dev-server --inline --open --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
     "build": "node build/build.js"
   },
   "dependencies": {
     "array-includes": "^3.1.1",
     "axios": "^0.19.2",
+    "dayjs": "^1.8.31",
+    "echarts": "^4.8.0",
     "element-ui": "^2.13.2",
+    "js-md5": "^0.7.3",
+    "mint-ui": "^2.2.13",
     "node-sass": "^4.14.1",
+    "v-charts": "^1.19.0",
     "vue": "^2.5.2",
     "vue-clipboard2": "^0.3.1",
     "vue-router": "^3.3.4"

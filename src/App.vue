@@ -19,13 +19,13 @@ export default {
 
 <style>
 @import url("./assets/css/base");
-body{
-    background-color: rgb(71, 81, 100);    
+body {
+    background-color: rgb(71, 81, 100);
 }
 #app {
     height: 100vh;
-    max-width: 1366px;
-    margin:0 auto;
+    /* max-width: 1366px; */
+    /* margin: 0 auto; */
 }
 .el-message {
     min-width: 55% !important;

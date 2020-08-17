@@ -87,7 +87,7 @@ export default {
                 center: true
             })
         },
-        async register() {
+        register() {
             let params = {
                 email: this.formData.email,
                 password: '12345678',

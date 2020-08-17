@@ -6,6 +6,11 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import axios from 'axios'
 import router from './router'
+
+import MintUI from 'mint-ui'
+import 'mint-ui/lib/style.css'
+Vue.use(MintUI)
+
 //复制到剪切板插件
 import VueClipboard from 'vue-clipboard2'
 Vue.use(VueClipboard)
@@ -15,6 +20,13 @@ Vue.use(VueClipboard)
 Vue.config.productionTip = false
 Vue.prototype.$http = axios
 Vue.use(ElementUI)
+
+import message from './message'
+Vue.prototype.$msg = message
+
+// v-charts
+import VCharts from 'v-charts'
+Vue.use(VCharts)
 
 /* eslint-disable no-new */
 new Vue({

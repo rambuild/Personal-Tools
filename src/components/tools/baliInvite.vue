@@ -1,11 +1,18 @@
 <template>
     <div class="content">
         <el-button type="primary" class="toHome" @click="toHome">返回首页</el-button>
+        <el-button type="warning" class="addInviteCode" @click="addInviteCode">添加推荐码</el-button>
         <el-row>
             <el-col :span="4" v-loading="loading"></el-col>
         </el-row>
         <div class="formBox">
-            <el-select v-model="selectValue" placeholder="选择推荐码">
+            <el-select
+                v-model="selectValue"
+                placeholder="选择推荐码"
+                filterable
+                remote
+                :remote-method="filterInviteCode"
+            >
                 <el-option v-for="item in options" :key="item.value" :value="item.value"></el-option>
             </el-select>
             <el-button type="primary" @click="sendRequest" :disabled="buttonDisabled">手动开始</el-button>
@@ -25,16 +32,8 @@
 export default {
     data() {
         return {
-            options: [
-                {
-                    value: "NAFMMA",
-                    count: 0
-                },
-                {
-                    value: "FMFQLC",
-                    count: 0
-                }
-            ],
+            options: [],
+            codeList: [],
             selectValue: "",
             buttonDisabled: false,
             loopButtonDisabled: false,
@@ -43,7 +42,41 @@ export default {
             loading: false
         };
     },
+    mounted() {
+        this.getInviteCode()
+    },
     methods: {
+        async getInviteCode() {
+            let { data: res } = await this.$http.get('https://api.rambuild.cn/tools/bali/inviteCode')
+            console.log(res)
+            this.codeList = res.codeList.map(i => {
+                return { value: i }
+            })
+            this.options = this.codeList
+        },
+        filterInviteCode(v) {
+            this.options = this.codeList.filter(i => {
+                return i.value.toLowerCase().indexOf(v.toLowerCase()) > -1
+            })
+        },
+        addInviteCode() {
+            this.$prompt('请输入要添加的推荐码', '提示', {
+                confirmButtonText: '确定',
+                cancelButtonText: '取消',
+                inputPattern: /^[A-Z]{6}$/,
+                inputErrorMessage: '只允许6位大写字母'
+            }).then(async ({ value }) => {
+                let { data: res } = await this.$http.post('https://api.rambuild.cn/tools/bali/inviteCode', {
+                    inviteCode: value
+                })
+                if (res.status == 200) {
+                    this.getInviteCode()
+                    this.$msg('success', `添加成功`)
+                } else {
+                    this.$msg('error', res.msg)
+                }
+            }).catch((v) => { });
+        },
         toHome() {
             this.$router.push('/')
             if (this.interval !== '') {
@@ -75,7 +108,7 @@ export default {
                         this.buttonDisabled = false;
                         this.loopButtonDisabled = false;
                     }
-                }, 1000);
+                }, 300);
             }
         },
         infiniteTimes() {
@@ -132,13 +165,13 @@ export default {
                 });
                 this.loading = false;
                 if (res.status.code == 200) {
-                    let { data : biliRecRes } = await this.$http.get(`https://api.rambuild.cn/tools/biliRecommand?inviteCode=${this.selectValue}`) //计次api
+                    let { data: biliRecRes } = await this.$http.get(`https://api.rambuild.cn/tools/baliInvite?inviteCode=${this.selectValue}`) //计次api
                     let current = this.options.filter(
                         i => i.value == this.selectValue
                     )[0];
                     current.count++;
                     this.$message({
-                        message: `${res.status.message}, 推荐码：${this.selectValue} 当前成功了${current.count}次，累计成功了：${biliRecRes.totalTimes} 次。`,
+                        message: `推荐码：${this.selectValue} 已成功了${current.count}次`,
                         type: "success",
                         center: true,
                         duration: 1500
@@ -160,6 +193,14 @@ export default {
 
 <style scoped lang="scss">
 .content {
+    .addInviteCode {
+        position: absolute;
+        top: 2%;
+        right: 3%;
+        width: 100px !important;
+        padding: 10px !important;
+        white-space: pre-wrap;
+    }
     position: relative;
     box-sizing: border-box;
     height: 100%;
