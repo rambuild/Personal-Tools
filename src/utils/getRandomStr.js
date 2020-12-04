@@ -10,11 +10,17 @@ function genRanStr(length) {
     return ramdomStr
 }
 
-function genRanEmail() {
+function genRanEmail(type) {
     var chars = ['qq', '163', 'foxmail', 'gmail', 'yahoo', 'msn', 'hotmail', '126', 'sohu','sina']
+    var count = 10
+    
+    if(type == 'tmpEmail'){
+        chars = ['linshiyouxiang.net','besttempmail.com','bestlistbase.com','meantinc.com','classesmail.com','powerencry.com','groupbuff.com']
+        count = 7
+    }    
 
     let ramdomEmail = ''
-    let randomId = Math.floor(Math.random() * 10)
+    let randomId = Math.floor(Math.random() * count)
     ramdomEmail = chars[randomId]
     return ramdomEmail
 }

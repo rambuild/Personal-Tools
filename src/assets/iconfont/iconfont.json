@@ -1,0 +1,527 @@
+{
+  "id": "2099999",
+  "name": "百度ocr",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "5820907",
+      "name": "数字",
+      "font_class": "shuzi",
+      "unicode": "e7f8",
+      "unicode_decimal": 59384
+    },
+    {
+      "icon_id": "9251676",
+      "name": "04-小狗",
+      "font_class": "-xiaogou",
+      "unicode": "e61c",
+      "unicode_decimal": 58908
+    },
+    {
+      "icon_id": "5193375",
+      "name": "红酒",
+      "font_class": "hongjiu",
+      "unicode": "e61b",
+      "unicode_decimal": 58907
+    },
+    {
+      "icon_id": "3859311",
+      "name": "植物",
+      "font_class": "zhiwu",
+      "unicode": "e613",
+      "unicode_decimal": 58899
+    },
+    {
+      "icon_id": "1256",
+      "name": "语音",
+      "font_class": "yuyin",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "1342",
+      "name": "人像",
+      "font_class": "renxiang",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "166645",
+      "name": "图像",
+      "font_class": "tuxiang",
+      "unicode": "e63c",
+      "unicode_decimal": 58940
+    },
+    {
+      "icon_id": "688123",
+      "name": "文本 审核 完成",
+      "font_class": "wenbenshenhewancheng",
+      "unicode": "e7a0",
+      "unicode_decimal": 59296
+    },
+    {
+      "icon_id": "767493",
+      "name": "银行卡",
+      "font_class": "yinxingqia",
+      "unicode": "e66a",
+      "unicode_decimal": 58986
+    },
+    {
+      "icon_id": "818163",
+      "name": "图像_images18",
+      "font_class": "tuxiangimages18",
+      "unicode": "e617",
+      "unicode_decimal": 58903
+    },
+    {
+      "icon_id": "827650",
+      "name": "评论",
+      "font_class": "pinglun",
+      "unicode": "e664",
+      "unicode_decimal": 58980
+    },
+    {
+      "icon_id": "1129587",
+      "name": "发票",
+      "font_class": "fapiao",
+      "unicode": "e61d",
+      "unicode_decimal": 58909
+    },
+    {
+      "icon_id": "1263298",
+      "name": "车辆",
+      "font_class": "cheliang",
+      "unicode": "e625",
+      "unicode_decimal": 58917
+    },
+    {
+      "icon_id": "1358439",
+      "name": "情绪",
+      "font_class": "qingxu",
+      "unicode": "e62d",
+      "unicode_decimal": 58925
+    },
+    {
+      "icon_id": "1391265",
+      "name": "人",
+      "font_class": "4",
+      "unicode": "e656",
+      "unicode_decimal": 58966
+    },
+    {
+      "icon_id": "1417452",
+      "name": "标识类_人脸抓拍",
+      "font_class": "biaoshilei_renlianzhuapai",
+      "unicode": "e611",
+      "unicode_decimal": 58897
+    },
+    {
+      "icon_id": "1447764",
+      "name": "图像",
+      "font_class": "tuxiang1",
+      "unicode": "e622",
+      "unicode_decimal": 58914
+    },
+    {
+      "icon_id": "1881557",
+      "name": "图形图像处理",
+      "font_class": "tuxingtuxiangchuli",
+      "unicode": "e663",
+      "unicode_decimal": 58979
+    },
+    {
+      "icon_id": "2076291",
+      "name": " 火车票",
+      "font_class": "huochepiao",
+      "unicode": "e89a",
+      "unicode_decimal": 59546
+    },
+    {
+      "icon_id": "2170870",
+      "name": "菜品-2",
+      "font_class": "caipin-",
+      "unicode": "e609",
+      "unicode_decimal": 58889
+    },
+    {
+      "icon_id": "3868258",
+      "name": "场景管理",
+      "font_class": "changjingguanli",
+      "unicode": "eb61",
+      "unicode_decimal": 60257
+    },
+    {
+      "icon_id": "3876833",
+      "name": "17 人脸识别",
+      "font_class": "renlianshibie",
+      "unicode": "e60a",
+      "unicode_decimal": 58890
+    },
+    {
+      "icon_id": "3879302",
+      "name": "标签",
+      "font_class": "biaoqian",
+      "unicode": "e616",
+      "unicode_decimal": 58902
+    },
+    {
+      "icon_id": "3899458",
+      "name": "人脸识别",
+      "font_class": "renlianshibie1",
+      "unicode": "e63e",
+      "unicode_decimal": 58942
+    },
+    {
+      "icon_id": "4485658",
+      "name": "喇叭",
+      "font_class": "laba",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
+      "icon_id": "4809690",
+      "name": "补换行驶证",
+      "font_class": "buhuanhangshizheng",
+      "unicode": "e603",
+      "unicode_decimal": 58883
+    },
+    {
+      "icon_id": "5647924",
+      "name": "我的发票",
+      "font_class": "wodefapiao",
+      "unicode": "e745",
+      "unicode_decimal": 59205
+    },
+    {
+      "icon_id": "5716006",
+      "name": "3D物体",
+      "font_class": "Dwuti",
+      "unicode": "e677",
+      "unicode_decimal": 58999
+    },
+    {
+      "icon_id": "5809177",
+      "name": "发票打印",
+      "font_class": "fapiaodayin",
+      "unicode": "e689",
+      "unicode_decimal": 59017
+    },
+    {
+      "icon_id": "5958394",
+      "name": "Image 图像识别",
+      "font_class": "Image",
+      "unicode": "e8c6",
+      "unicode_decimal": 59590
+    },
+    {
+      "icon_id": "5961315",
+      "name": "人体检测",
+      "font_class": "rentijiance",
+      "unicode": "ec5a",
+      "unicode_decimal": 60506
+    },
+    {
+      "icon_id": "6077725",
+      "name": "车辆管理",
+      "font_class": "cheliangguanli",
+      "unicode": "e61e",
+      "unicode_decimal": 58910
+    },
+    {
+      "icon_id": "6077738",
+      "name": "人像",
+      "font_class": "renxiang1",
+      "unicode": "e623",
+      "unicode_decimal": 58915
+    },
+    {
+      "icon_id": "6325389",
+      "name": "查询驾驶证信息",
+      "font_class": "chaxunjiashizhengxinxi",
+      "unicode": "e60c",
+      "unicode_decimal": 58892
+    },
+    {
+      "icon_id": "6501618",
+      "name": "人像",
+      "font_class": "icon-renxiang",
+      "unicode": "e634",
+      "unicode_decimal": 58932
+    },
+    {
+      "icon_id": "6839685",
+      "name": "发票",
+      "font_class": "fapiao1",
+      "unicode": "e6b8",
+      "unicode_decimal": 59064
+    },
+    {
+      "icon_id": "7055662",
+      "name": "营业执照",
+      "font_class": "yingyezhizhao",
+      "unicode": "e733",
+      "unicode_decimal": 59187
+    },
+    {
+      "icon_id": "7561896",
+      "name": "图像识别",
+      "font_class": "tuxiangshibie",
+      "unicode": "e605",
+      "unicode_decimal": 58885
+    },
+    {
+      "icon_id": "8241350",
+      "name": "驾驶员分析",
+      "font_class": "jiashiyuanfenxi",
+      "unicode": "e661",
+      "unicode_decimal": 58977
+    },
+    {
+      "icon_id": "8361767",
+      "name": "地标",
+      "font_class": "dibiao",
+      "unicode": "e6bc",
+      "unicode_decimal": 59068
+    },
+    {
+      "icon_id": "8546837",
+      "name": "驾驶舱",
+      "font_class": "jiashicang",
+      "unicode": "e63f",
+      "unicode_decimal": 58943
+    },
+    {
+      "icon_id": "9241144",
+      "name": "手写签批",
+      "font_class": "iconzhengli_shouxieqianpi",
+      "unicode": "e648",
+      "unicode_decimal": 58952
+    },
+    {
+      "icon_id": "10017506",
+      "name": "车辆查询",
+      "font_class": "icon_quchechaxun-copy",
+      "unicode": "e627",
+      "unicode_decimal": 58919
+    },
+    {
+      "icon_id": "10033416",
+      "name": "图像识别",
+      "font_class": "tuxiangshibie___",
+      "unicode": "e606",
+      "unicode_decimal": 58886
+    },
+    {
+      "icon_id": "10033419",
+      "name": "文字识别",
+      "font_class": "wenzishibie___",
+      "unicode": "e607",
+      "unicode_decimal": 58887
+    },
+    {
+      "icon_id": "10108172",
+      "name": "手势密码",
+      "font_class": "shoushimima",
+      "unicode": "e60b",
+      "unicode_decimal": 58891
+    },
+    {
+      "icon_id": "10176425",
+      "name": "语音",
+      "font_class": "yuyin1",
+      "unicode": "e614",
+      "unicode_decimal": 58900
+    },
+    {
+      "icon_id": "11200578",
+      "name": "动漫",
+      "font_class": "dongman",
+      "unicode": "e608",
+      "unicode_decimal": 58888
+    },
+    {
+      "icon_id": "11429592",
+      "name": "实体模型",
+      "font_class": "shitimoxing",
+      "unicode": "e60f",
+      "unicode_decimal": 58895
+    },
+    {
+      "icon_id": "11606465",
+      "name": "雾",
+      "font_class": "wu",
+      "unicode": "e60d",
+      "unicode_decimal": 58893
+    },
+    {
+      "icon_id": "11719488",
+      "name": "身份证",
+      "font_class": "ziyuan",
+      "unicode": "e619",
+      "unicode_decimal": 58905
+    },
+    {
+      "icon_id": "11756082",
+      "name": "人物",
+      "font_class": "V",
+      "unicode": "e709",
+      "unicode_decimal": 59145
+    },
+    {
+      "icon_id": "12268070",
+      "name": "人体检索",
+      "font_class": "rentijiansuo",
+      "unicode": "e60e",
+      "unicode_decimal": 58894
+    },
+    {
+      "icon_id": "12329530",
+      "name": "水果蔬菜",
+      "font_class": "shuiguoshucai",
+      "unicode": "e7b0",
+      "unicode_decimal": 59312
+    },
+    {
+      "icon_id": "12731884",
+      "name": "手势类单色线性图标finger-rotate-01",
+      "font_class": "finger-rotate-",
+      "unicode": "e88a",
+      "unicode_decimal": 59530
+    },
+    {
+      "icon_id": "13210915",
+      "name": "手势交互",
+      "font_class": "anzhuo-",
+      "unicode": "e610",
+      "unicode_decimal": 58896
+    },
+    {
+      "icon_id": "13468977",
+      "name": "人脸识别",
+      "font_class": "renlianshibie2",
+      "unicode": "e637",
+      "unicode_decimal": 58935
+    },
+    {
+      "icon_id": "13805012",
+      "name": "图像位移",
+      "font_class": "tuxiangweiyi",
+      "unicode": "e788",
+      "unicode_decimal": 59272
+    },
+    {
+      "icon_id": "14163796",
+      "name": "人脸识别",
+      "font_class": "renlianshibie3",
+      "unicode": "e64c",
+      "unicode_decimal": 58956
+    },
+    {
+      "icon_id": "14167148",
+      "name": "人脸识别",
+      "font_class": "renlianshibie4",
+      "unicode": "e681",
+      "unicode_decimal": 59009
+    },
+    {
+      "icon_id": "14769043",
+      "name": "词法题型",
+      "font_class": "cifatixing",
+      "unicode": "e624",
+      "unicode_decimal": 58916
+    },
+    {
+      "icon_id": "15112742",
+      "name": "电子回单",
+      "font_class": "dianzihuidan",
+      "unicode": "e612",
+      "unicode_decimal": 58898
+    },
+    {
+      "icon_id": "15112798",
+      "name": "人脸识别",
+      "font_class": "renlianshibie5",
+      "unicode": "e615",
+      "unicode_decimal": 58901
+    },
+    {
+      "icon_id": "15203370",
+      "name": "短文本相似",
+      "font_class": "duanwenbenxiangsi",
+      "unicode": "e64b",
+      "unicode_decimal": 58955
+    },
+    {
+      "icon_id": "15203377",
+      "name": "实体识别",
+      "font_class": "shitishibie",
+      "unicode": "e64d",
+      "unicode_decimal": 58957
+    },
+    {
+      "icon_id": "15282641",
+      "name": "出租车",
+      "font_class": "chuzuche",
+      "unicode": "e6bd",
+      "unicode_decimal": 59069
+    },
+    {
+      "icon_id": "15628553",
+      "name": "车牌识别",
+      "font_class": "chepaishibie",
+      "unicode": "e6a9",
+      "unicode_decimal": 59049
+    },
+    {
+      "icon_id": "15685220",
+      "name": "人脸识别",
+      "font_class": "renlianshibie6",
+      "unicode": "e6d7",
+      "unicode_decimal": 59095
+    },
+    {
+      "icon_id": "15792158",
+      "name": "人脸识别",
+      "font_class": "renlianshibie7",
+      "unicode": "e755",
+      "unicode_decimal": 59221
+    },
+    {
+      "icon_id": "15816445",
+      "name": "017人脸-3",
+      "font_class": "017renlian-3",
+      "unicode": "e7eb",
+      "unicode_decimal": 59371
+    },
+    {
+      "icon_id": "16204109",
+      "name": "手部",
+      "font_class": "shoubu",
+      "unicode": "e9f4",
+      "unicode_decimal": 59892
+    },
+    {
+      "icon_id": "16316165",
+      "name": "数字货币",
+      "font_class": "shuzihuobi",
+      "unicode": "e6b1",
+      "unicode_decimal": 59057
+    },
+    {
+      "icon_id": "17002302",
+      "name": "驾驶证",
+      "font_class": "jiashizheng",
+      "unicode": "e692",
+      "unicode_decimal": 59026
+    },
+    {
+      "icon_id": "17350492",
+      "name": "车辆抓拍",
+      "font_class": "cheliangzhuapai",
+      "unicode": "e682",
+      "unicode_decimal": 59010
+    }
+  ]
+}

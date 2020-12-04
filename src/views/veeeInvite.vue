@@ -1,6 +1,5 @@
 <template>
     <div class="veeeContent">
-        <el-button type="primary" class="toHome" @click="toHome">返回首页</el-button>
         <transition name="fade">
             <div class="box">
                 <el-form :rules="formRules" :model="formData" ref="emailForm">
@@ -15,7 +14,7 @@
                 </el-form>
                 <el-alert title="密码均为：123456" type="warning" :closable="false" show-icon></el-alert>
                 <el-button type="primary" @click="ranRegEmail">随机生成邮箱</el-button>
-                <el-button type="primary" @click="register" v-loading="loading">注册Veee</el-button>
+                <el-button type="danger" @click="register" v-loading="loading">注册Veee</el-button>
                 <el-button
                     type="primary"
                     v-clipboard:copy="registedEmail"
@@ -66,9 +65,6 @@ export default {
         }
     },
     methods: {
-        toHome() {
-            this.$router.push('/')
-        },
         onCopy(e) {
             this.$message.success({
                 message: '邮箱已复制到剪切板',

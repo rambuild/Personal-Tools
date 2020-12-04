@@ -1,6 +1,5 @@
 <template>
     <div class="exchangeContent">
-        <el-button type="primary" class="toHome" @click="$router.push('/')">返回首页</el-button>
         <div class="loginBox">
             <div class="formBox">
                 <el-form

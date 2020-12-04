@@ -1,15 +1,20 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
+import store from './store'
 import App from './App'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
-import axios from 'axios'
+import axios from './utils/http'
 import router from './router'
 
 import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css'
+// 百度ocr项目iconfont
+import './assets/iconfont/iconfont.css'
 Vue.use(MintUI)
+
+Vue.prototype.$store = store
 
 //复制到剪切板插件
 import VueClipboard from 'vue-clipboard2'

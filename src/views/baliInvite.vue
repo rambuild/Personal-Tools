@@ -1,6 +1,5 @@
 <template>
     <div class="content">
-        <el-button type="primary" class="toHome" @click="toHome">返回首页</el-button>
         <el-button type="warning" class="addInviteCode" @click="addInviteCode">添加推荐码</el-button>
         <el-row>
             <el-col :span="4" v-loading="loading"></el-col>
@@ -76,17 +75,6 @@ export default {
                     this.$msg('error', res.msg)
                 }
             }).catch((v) => { });
-        },
-        toHome() {
-            this.$router.push('/')
-            if (this.interval !== '') {
-                this.$message.warning({
-                    message: '已取消',
-                    center: true,
-                    duration: 1500
-                })
-            }
-            clearInterval(this.interval)
         },
         sendTimes(setTimes) {
             if (this.selectValue == "") {
@@ -171,7 +159,7 @@ export default {
                     )[0];
                     current.count++;
                     this.$message({
-                        message: `推荐码：${this.selectValue} 已成功了${current.count}次`,
+                        message: `${this.selectValue}，成功`,
                         type: "success",
                         center: true,
                         duration: 1500

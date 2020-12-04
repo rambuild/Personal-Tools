@@ -8,7 +8,7 @@ function setStorage(key, val) {
 function getStorage(key) {
     let valObj = JSON.parse(window.localStorage.getItem(key))
     if (valObj) {
-        let effectTime = 604800000 // 有效时间7天
+        let effectTime = 2592000000 // 有效时间30天
         let ctime = valObj.ctime
         let nowTime = new Date().getTime()
         if (nowTime - ctime > effectTime) { // 过期
