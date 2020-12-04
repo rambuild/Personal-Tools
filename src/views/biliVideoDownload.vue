@@ -2,11 +2,14 @@
 	<div class="content">
 		<el-button type="warning" class="searchHistory" @click="showDrawer">查询历史</el-button>
 		<el-form :rules="formRules" :model="formData" ref="formRef">
-			<el-form-item label="网址：" label-width="65px" prop="videLinks">
-				<el-input v-model="formData.videLinks" clearable ref="inputRef"></el-input>
+			<el-form-item label="网址：" label-width="65px" prop="videoLinks">
+				<el-input v-model="formData.videoLinks" clearable ref="inputRef"></el-input>
 			</el-form-item>
 			<el-form-item>
 				<el-button type="primary" @click="sendRequest" v-loading="loading">确定</el-button>
+			</el-form-item>
+			<el-form-item>
+				<el-button type="danger" @click="$refs.formRef.resetFields()">清空</el-button>
 			</el-form-item>
 		</el-form>
 		<div class="receiveContent">
@@ -26,12 +29,12 @@
 		<!-- 查询历史记录 -->
 		<div class="drawerBox">
 			<el-drawer title="查询历史" :visible.sync="drawerVisible" direction="ltr">
-				<div class="clearHistory" v-show="searchList.length > 0">
-					<span @click="clearHistory">删除历史记录</span>
-				</div>
 				<ul class="historyItem">
-					<li v-for="(i, index) in searchList" :key="index" @click="searchFromList(i)">
-						<div>{{ index + 1 }}. {{ i.videoName }}</div>
+					<li v-for="(i, index) in searchList" :key="index">
+						<div class="itemBox">
+							<span @click="searchFromList(i)" class="listText">{{ index + 1 }}. {{ i.videoName }}</span>
+							<span @click="delItem(i)" class="delText">删除</span>
+						</div>
 					</li>
 				</ul>
 			</el-drawer>
@@ -39,7 +42,6 @@
 	</div>
 </template>
 <script>
-import { setStorage, getStorage, removeStorage } from "@/utils/cusLocStorage"
 export default {
 	data() {
 		var checkvideoLink = (rule, val, callback) => {
@@ -55,10 +57,10 @@ export default {
 		}
 		return {
 			formData: {
-				videLinks: ""
+				videoLinks: ""
 			},
 			formRules: {
-				videLinks: [
+				videoLinks: [
 					{
 						required: true,
 						trigger: "change",
@@ -81,9 +83,10 @@ export default {
 	},
 	mounted() {
 		this.$refs.inputRef.focus()
+		this.getSearchList()
 	},
 	methods: {
-		sendRequest() {
+		async sendRequest() {
 			this.$refs.formRef.validate(async valid => {
 				if (!valid) {
 					return
@@ -93,7 +96,7 @@ export default {
 						method: "POST",
 						url: "https://api.rambuild.cn/tools/biliVideoDownload",
 						data: {
-							url: this.formData.videLinks
+							url: this.formData.videoLinks
 						}
 					})
 					this.loading = false
@@ -107,11 +110,8 @@ export default {
 							}
 						})
 						if (pushFlag) {
-							this.searchList.push({
-								videoName: res.name,
-								url: this.formData.videLinks
-							})
-							setStorage("queryBiliVideo", this.searchList)
+							await this.saveSearchItem(res.name)
+							await this.getSearchList()
 						}
 						this.$msg("success", res.msg)
 						let listAttr = Object.keys(res.list)
@@ -127,38 +127,60 @@ export default {
 						this.videoDetails.coverPic = res.list.视频封面.url
 						this.videoDetails.title = res.name
 					} else {
-						this.$msg("error", res.msg)
+						this.$msg("error", "解析失败")
 					}
 				}
 			})
 		},
 		showDrawer() {
 			this.drawerVisible = true
-			// 载入搜索历史记录
-			let queryBiliVideo = getStorage("queryBiliVideo")
-			if (queryBiliVideo) {
-				this.searchList = queryBiliVideo
+			this.getSearchList()
+		},
+		// 获取搜索记录
+		async getSearchList() {
+			let { data: searchList } = await this.$http.get("https://api.rambuild.cn/tools/getBiliVideo")
+			this.searchList = searchList
+		},
+		// 保存搜索结果
+		async saveSearchItem(videoName) {
+			let { data: res } = await this.$http({
+				method: "POST",
+				url: "https://api.rambuild.cn/tools/saveBiliVideo",
+				data: {
+					videoName,
+					url: this.formData.videoLinks
+				}
+			})
+			if (res.status == 200) {
+				this.$msg("success", "搜索记录存储成功")
+			} else {
+				this.$msg("error", "搜索记录存储失败")
 			}
 		},
-		clearHistory() {
-			this.$confirm("确定删除历史记录？", "提示", {
+		// 删除单项搜索记录
+		delItem(i) {
+			this.$prompt("", "验证码", {
 				confirmButtonText: "确定",
-				cancelButtonText: "取消",
-				type: "warning"
+				cancelButtonText: "取消"
 			})
-				.then(() => {
-					// 清除搜索历史
-					this.searchList = []
-					removeStorage("queryBiliVideo")
-					this.$msg("success", "删除成功")
+				.then(async ({ value }) => {
+					let { data: res } = await this.$http.delete(
+						`https://api.rambuild.cn/tools/delBiliVideo?url=${i.url}&verifyCode=${value}`
+					)
+					if (res.status == 200) {
+						this.$msg("success", "删除成功")
+						this.getSearchList()
+					} else {
+						this.$msg("error", res.msg)
+					}
 				})
 				.catch(() => {})
 		},
 		searchFromList(i) {
 			this.drawerVisible = false
 			// 选择的链接不一样才搜索
-			if (i.url != this.formData.goodsLink) {
-				this.formData.videLinks = i.url
+			if (i.url != this.formData.videoLinks) {
+				this.formData.videoLinks = i.url
 				this.sendRequest()
 			}
 		}
@@ -253,6 +275,21 @@ export default {
 			padding: 0 1rem;
 			text-align: justify;
 			padding-bottom: 1rem;
+			.itemBox {
+				display: flex;
+				justify-content: space-between;
+				.listText {
+					width: 80%;
+					text-align: justify;
+				}
+				.delText {
+					width: 15%;
+					color: red;
+					display: flex;
+					justify-content: flex-end;
+					align-items: center;
+				}
+			}
 			li {
 				margin-bottom: 0.6rem;
 				line-height: 18px;
