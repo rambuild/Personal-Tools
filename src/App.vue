@@ -1,11 +1,7 @@
 <template>
 	<div id="app">
 		<div class="toHomeBox">
-			<el-button
-				type="primary"
-				class="toHome"
-				@click="$router.push('/')"
-				v-show="$route.path != '/'"
+			<el-button type="primary" class="toHome" @click="$router.push('/')" v-show="$route.path != '/'"
 				>返回首页</el-button
 			>
 		</div>
@@ -48,9 +44,9 @@ body {
 .toHomeBox {
 	width: 95%;
 	margin: 0 auto;
-    height: 1px;
+	height: 1px;
 	.toHome {
-        position: relative;
+		position: relative;
 		top: 15px;
 		left: 0;
 		width: 80px !important;

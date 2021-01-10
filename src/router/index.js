@@ -31,7 +31,7 @@ const router = new Router({
 			}
 		},
 		{
-			path: "/biliVideoDownload",
+			path: "/bili",
 			component: () => import("@/views/biliVideoDownload"),
 			meta: {
 				title: "资源下载"
