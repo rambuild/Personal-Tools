@@ -10,9 +10,9 @@
 			<div class="btnBox" v-if="showMoreFlag == true">
 				<el-button type="primary" @click="navTo('/veee')">Veee</el-button>
 			</div>
-			<div class="btnBox" v-if="showMoreFlag == true">
+			<!-- <div class="btnBox" v-if="showMoreFlag == true">
 				<el-button type="primary" class="v2box" @click="navTo('/v2box')">V2box</el-button>
-			</div>
+			</div> -->
 			<!-- <div class="btnBox">
 				<el-button type="primary" @click="navTo('/priceCompare')">电商比价</el-button>
 			</div> -->
